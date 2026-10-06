@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pendiag"
+version = "1.0.0"
+description = "CLI de Diagnóstico Rápido de Hardware e Rede em Pendrive"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "psutil>=5.9.0",
+    "rich>=13.0.0",
+    "typer>=0.9.0",
+    "click>=8.0.0",
+    "jinja2>=3.1.0",
+]
+
+[project.scripts]
+pendiag = "pendiag.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pendiag*"]
